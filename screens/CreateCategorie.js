@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {AsyncStorage} from 'react-native';
 import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, SectionList, ImageBackground, TextInput, Link, Button, CardItem, Input } from 'react-native';
 
 

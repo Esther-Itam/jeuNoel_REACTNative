@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {AsyncStorage} from 'react-native';
-import { SafeAreaView, ScrollView, View, FlatList, StyleSheet, Text, StatusBar, SectionList, ImageBackground, TextInput, Link, Button, CardItem, Input } from 'react-native';
+import { ScrollView, View, FlatList, StyleSheet, Text, ImageBackground, Button} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import axios from 'axios';
 
@@ -54,50 +53,44 @@ export default function ModifyQuiz({navigation}){
           return(
             <ImageBackground source={require('../pictures/background10.png')} resizeMode="cover" style={{width: '100%', height: '100%'}}>
             <ScrollView style={styles.scrollView}>
-            <View style={styles.titleContainer}>
-            <Text style={styles.title}>Quiz: {navigation.getParam('name')}</Text>
-            </View>
-            <View style={styles.button}>
-              <Button color='#841584' onPress={pressHandlerDeleteQuiz} title="Supprimer le Quiz"/>
-              </View>
-            <View style={styles.container}>
-            <View style={styles.container}>
-            
-              <FlatList 
-                data={quiz[1]}
-                renderItem={({item})=>(
-                    <TouchableOpacity onPress={()=>navigation.navigate('ModifyQuestion', item)}>
-                    <Text style={styles.flatList}>{item.questionName}</Text>
-                    </TouchableOpacity>
- 
-                )}
-                keyExtractor={item => item.questionId}
-                ItemSeparatorComponent={_renderSeparator}
-                ListHeaderComponent={_renderHeader}
-                />
+              <View style={styles.titleContainer}>
+                <Text style={styles.title}>Quiz: {navigation.getParam('name')}</Text>
                 </View>
+                <View style={styles.button}>
+                  <Button color='#841584' onPress={pressHandlerDeleteQuiz} title="Supprimer le Quiz"/>
+                  </View>
                 <View style={styles.container}>
-                <FlatList 
-                data={quiz[2]}
-                initialNumToRender={1}
-                renderItem={({item})=>(
-                    <TouchableOpacity onPress={()=>navigation.navigate('ModifyAnswer', item)}>
-                    <Text style={styles.flatList}>{item.answerName}</Text>
-                    </TouchableOpacity>
- 
-                )}
-                keyExtractor={item => item.answerId}
-                ItemSeparatorComponent={_renderSeparator}
-                ListHeaderComponent={_renderHeader2}
-                />
+                <View style={styles.container}>
+                
+                  <FlatList 
+                    data={quiz[1]}
+                    renderItem={({item})=>(
+                        <TouchableOpacity onPress={()=>navigation.navigate('ModifyQuestion', item)}>
+                        <Text style={styles.flatList}>{item.questionName}</Text>
+                        </TouchableOpacity>
+    
+                    )}
+                    keyExtractor={item => item.questionId}
+                    ItemSeparatorComponent={_renderSeparator}
+                    ListHeaderComponent={_renderHeader}
+                    />
+                    </View>
+                    <View style={styles.container}>
+                    <FlatList 
+                    data={quiz[2]}
+                    initialNumToRender={1}
+                    renderItem={({item})=>(
+                        <TouchableOpacity onPress={()=>navigation.navigate('ModifyAnswer', item)}>
+                        <Text style={styles.flatList}>{item.answerName}</Text>
+                        </TouchableOpacity>
+    
+                    )}
+                    keyExtractor={item => item.answerId}
+                    ItemSeparatorComponent={_renderSeparator}
+                    ListHeaderComponent={_renderHeader2}
+                    />
+                    </View>
                 </View>
-
-       
-           
-
-              </View>
-
-          
             </ScrollView>
           </ImageBackground>
         )

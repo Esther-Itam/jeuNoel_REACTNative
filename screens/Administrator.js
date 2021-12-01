@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
-import {AsyncStorage} from 'react-native';
-import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, SectionList, ImageBackground, TextInput, Link, Button, CardItem, Input } from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {View, StyleSheet, Text, ImageBackground, Button} from 'react-native';
 
 
 export default function Administrator({navigation}){
+
     const pressHandlerCategorie = () =>{
       
         navigation.push('Categorie');
@@ -18,6 +18,7 @@ export default function Administrator({navigation}){
               <View style={styles.titleContainer}>
               <Text style={styles.title}>Bienvenue sur votre espace</Text>
               </View>
+             
               <View style={styles.button}>
               <Button color='#841584' onPress={pressHandlerCategorie} title="Tableau de bord des catégories"/>
               </View>

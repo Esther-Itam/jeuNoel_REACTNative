@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import {AsyncStorage} from 'react-native';
 import { SafeAreaView, ScrollView, View, FlatList, StyleSheet, Text, StatusBar, SectionList, ImageBackground, TextInput, Link, Button, CardItem, Input } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import axios from 'axios';
@@ -25,29 +24,29 @@ export default function Quiz({navigation}){
 
         return(
             <ImageBackground source={require('../pictures/background10.png')} resizeMode="cover" style={{width: '100%', height: '100%'}}>
-            <ScrollView style={styles.scrollView}>
-            <View style={styles.titleContainer}>
-            <Text style={styles.title}>Tableau de bord des Quiz</Text>
-            </View>
-            <View style={styles.button}>
-            <Button color='cadetblue' onPress={pressHandlerSummary} title="Revenir au sommaire"/>
-            </View>
-            <View style={styles.container}>
-            <FlatList 
-              data={quiz}
-              
-              renderItem={({item})=>(
-                  <TouchableOpacity onPress={()=>navigation.navigate('ModifyQuiz', item)}>
-                      <Text style={styles.flatList}>{item.name}</Text>
-                  </TouchableOpacity>
-              )}
-              keyExtractor={item => item.id}
-              />
-              </View>
-           {/*  <View style={styles.button}>
-            <Button color='#841584' onPress={pressHandlerCreateQuiz} title="Creer un Quiz"/>
-            </View> */}
-            </ScrollView>
+                <ScrollView style={styles.scrollView}>
+                    <View style={styles.titleContainer}>
+                    <Text style={styles.title}>Tableau de bord des Quiz</Text>
+                    </View>
+                    <View style={styles.button}>
+                    <Button color='cadetblue' onPress={pressHandlerSummary} title="Revenir au sommaire"/>
+                    </View>
+                    <View style={styles.container}>
+                    <FlatList 
+                    data={quiz}
+                    
+                    renderItem={({item})=>(
+                        <TouchableOpacity onPress={()=>navigation.navigate('ModifyQuiz', item)}>
+                            <Text style={styles.flatList}>{item.name}</Text>
+                        </TouchableOpacity>
+                    )}
+                    keyExtractor={item => item.id}
+                    />
+                    </View>
+                {/*  <View style={styles.button}>
+                    <Button color='#841584' onPress={pressHandlerCreateQuiz} title="Creer un Quiz"/>
+                    </View> */}
+                </ScrollView>
           </ImageBackground>
         )
 

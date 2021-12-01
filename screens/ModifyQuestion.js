@@ -1,9 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import {AsyncStorage} from 'react-native';
-import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, SectionList, ImageBackground, TextInput, Link, Button, CardItem, Input } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import axios from 'axios';
-
+import React, {useState} from 'react';
+import {View, StyleSheet, Text,ImageBackground, TextInput, Button} from 'react-native';
 
 export default function ModifyQuestion({navigation}){
     const [name, setName] = useState();
@@ -30,7 +26,6 @@ export default function ModifyQuestion({navigation}){
         modifyQuestion();
         navigation.push('ModifyQuiz');
     }
-
 
         return(
             <ImageBackground source={require('../pictures/background10.png')} resizeMode="cover" style={{width: '100%', height: '100%'}}>

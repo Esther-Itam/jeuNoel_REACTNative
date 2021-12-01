@@ -1,13 +1,8 @@
-import React, {useState, useEffect} from 'react';
-import {AsyncStorage} from 'react-native';
-import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, SectionList, ImageBackground, TextInput, Link, Button, CardItem, Input } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import axios from 'axios';
-
+import React, {useState} from 'react';
+import { View, StyleSheet, Text, ImageBackground, TextInput, Button} from 'react-native';
 
 export default function ModifyCategorie({navigation}){
     const [name, setName] = useState();
-    const [is_used, setIs_Used] = useState(0);
     
     const modifyCategorie = async()=>{
          const id = navigation.getParam('id');

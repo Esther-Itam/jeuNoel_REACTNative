@@ -1,17 +1,28 @@
-import React, {useState} from 'react';
-import {AsyncStorage} from 'react-native';
-import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, SectionList, ImageBackground, TextInput, Link, Button, CardItem, Input } from 'react-native';
-import axios from 'axios';
-import LARAVEL_SERVER from './Variable';
+import React, {useState, useEffect} from 'react';
+import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, SectionList, ImageBackground, TextInput, Link, Button, CardItem, Input, Alert } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Login({navigation}){
 
-    const [email, setEmail] = useState();
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState();
 
- 
-    const login = async()=>{
-         
+
+    const getData = async () => 
+    {
+        const emailAdmin = await AsyncStorage.getItem('email');
+        if(emailAdmin != "patatereine7@hotmail.fr")
+        {
+            Alert.alert("Désolé seul l'administrateur du site peut accéder à l'application!")
+        }else
+        {
+            navigation.push('Administrator');
+            Alert.alert("Bienvenue dans votre espace Administrateur")
+       }
+    }
+  
+    const login = async()=>
+    {
         await fetch('http://192.168.1.19:8000/api/login',{
             method:'POST',
             headers:{
@@ -21,15 +32,14 @@ export default function Login({navigation}){
             body:JSON.stringify({'email':email, "password":password})
         })
         .then(res=>res.text())
-        .then(resData=>{console.log(resData)})
+        .then(res=>{console.log(res)})
         .catch(error=>{console.log(error)});
+        await AsyncStorage.setItem('email', email)
     }
+
     const pressHandlerLogin = () =>{
         login();
-     
-            navigation.push('Administrator', 'api_token');
-
-
+        getData();
     }
 
         return(

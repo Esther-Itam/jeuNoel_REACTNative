@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import {AsyncStorage} from 'react-native';
 import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, SectionList, ImageBackground, TextInput, Link, Button, CardItem, Input } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import axios from 'axios';

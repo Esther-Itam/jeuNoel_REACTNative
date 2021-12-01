@@ -1,7 +1,5 @@
 import React from 'react';
-import {GoogleLoginButton} from 'react-social-login-buttons';
-import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, SectionList, ImageBackground, TextInput, Link, Button } from 'react-native';
-import globalStyles from '../styles/globalStyles';
+import { View, StyleSheet, Text, ImageBackground, Button } from 'react-native';
 
 export default function Home({navigation}){
   
@@ -9,10 +7,7 @@ export default function Home({navigation}){
         navigation.push('Login');
     }
 
-
-        return(
-   
-            
+        return(    
             <ImageBackground source={require('../pictures/exterieur2.jpg')} resizeMode="cover" style={{width: '100%', height: '100%'}}>
                     <Text style={styles.title}>Bienvenue au Quiz de Noël</Text>
                     <View style={styles.button}>

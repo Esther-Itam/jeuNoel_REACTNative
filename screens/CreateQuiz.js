@@ -1,9 +1,6 @@
-import React, {useState, useEffect} from 'react';
-import {AsyncStorage} from 'react-native';
+import React, {useState} from 'react';
 import { SafeAreaView, ScrollView, Picker, View, FlatList, StyleSheet, Text, StatusBar, SectionList, ImageBackground, TextInput, Link, Button, CardItem, Input } from 'react-native';
 import axios from 'axios';
-import Categorie from './Categorie';
-
 
 export default function CreateQuiz({navigation}){
 
@@ -85,74 +82,56 @@ export default function CreateQuiz({navigation}){
               ?
               <View>
               
-                    <TextInput placeholder="Question 1" value={question} style={styles.input} onChangeText= {(value)=>setQuestion(value)}/>
-                    <View style={styles.button}>
+                <TextInput placeholder="Question 1" value={question} style={styles.input} onChangeText= {(value)=>setQuestion(value)}/>
+                <View style={styles.button}>
                     <Button color='cadetblue' onPress={pressHandlerCreateQuestion} title="Ajouter des réponses"/>
-                    </View>
-               
-                  
-                    <TextInput placeholder="Question 2" value={question} style={styles.input} onChangeText= {(value)=>setQuestion(value)}/>
-                    <View style={styles.button}>
-                    <Button color='cadetblue' onPress={pressHandlerCreateQuestion} title="Ajouter des réponses"/>
-                    </View>
-                  
-             
-
-                    <TextInput placeholder="Question 3" value={question} style={styles.input} onChangeText= {(value)=>setQuestion(value)}/>
-                    <View style={styles.button}>
-                    <Button color='cadetblue' onPress={pressHandlerCreateQuestion} title="Ajouter des réponses"/>
-                    </View>
-                  
-
-
-                    <TextInput placeholder="Question 4" value={question} style={styles.input} onChangeText= {(value)=>setQuestion(value)}/>
-                    <View style={styles.button}>
-                    <Button color='cadetblue' onPress={pressHandlerCreateQuestion} title="Ajouter des réponses"/>
-                    </View>
-                  
-             
-
-                    <TextInput placeholder="Question 5" value={question} style={styles.input} onChangeText= {(value)=>setQuestion(value)}/>
-                    <View style={styles.button}>
-                   <Button color='cadetblue' onPress={pressHandlerCreateQuestion} title="Ajouter des réponses"/>
-                    </View>
-                  
-   
-
-                    <TextInput placeholder="Question 6" value={question} style={styles.input} onChangeText= {(value)=>setQuestion(value)}/>
-                    <View style={styles.button}>
-                    <Button color='cadetblue' onPress={pressHandlerCreateQuestion} title="Ajouter des réponses"/>
-                    </View>
-                  
+                </View>
             
-
-                    <TextInput placeholder="Question 7" value={question} style={styles.input} onChangeText= {(value)=>setQuestion(value)}/>
-                    <View style={styles.button}>
+                <TextInput placeholder="Question 2" value={question} style={styles.input} onChangeText= {(value)=>setQuestion(value)}/>
+                <View style={styles.button}>
                     <Button color='cadetblue' onPress={pressHandlerCreateQuestion} title="Ajouter des réponses"/>
-                    </View>
-                  
-               
+                </View>
 
-                    <TextInput placeholder="Question 8" value={question} style={styles.input} onChangeText= {(value)=>setQuestion(value)}/>
-                    <View style={styles.button}>
+                <TextInput placeholder="Question 3" value={question} style={styles.input} onChangeText= {(value)=>setQuestion(value)}/>
+                <View style={styles.button}>
                     <Button color='cadetblue' onPress={pressHandlerCreateQuestion} title="Ajouter des réponses"/>
-                    </View>
-                  
-         
+                </View>
 
-                    <TextInput placeholder="Question 9" value={question} style={styles.input} onChangeText= {(value)=>setQuestion(value)}/>
-                    <View style={styles.button}>
+                <TextInput placeholder="Question 4" value={question} style={styles.input} onChangeText= {(value)=>setQuestion(value)}/>
+                <View style={styles.button}>
                     <Button color='cadetblue' onPress={pressHandlerCreateQuestion} title="Ajouter des réponses"/>
-                    </View>
-                  
-            
+                </View>
 
-                    <TextInput placeholder="Question 10" value={question} style={styles.input} onChangeText= {(value)=>setQuestion(value)}/>
-                    <View style={styles.button}>
+                <TextInput placeholder="Question 5" value={question} style={styles.input} onChangeText= {(value)=>setQuestion(value)}/>
+                <View style={styles.button}>
                     <Button color='cadetblue' onPress={pressHandlerCreateQuestion} title="Ajouter des réponses"/>
-                    </View>
+                </View>
+
+                <TextInput placeholder="Question 6" value={question} style={styles.input} onChangeText= {(value)=>setQuestion(value)}/>
+                <View style={styles.button}>
+                    <Button color='cadetblue' onPress={pressHandlerCreateQuestion} title="Ajouter des réponses"/>
+                </View>
+
+                <TextInput placeholder="Question 7" value={question} style={styles.input} onChangeText= {(value)=>setQuestion(value)}/>
+                <View style={styles.button}>
+                    <Button color='cadetblue' onPress={pressHandlerCreateQuestion} title="Ajouter des réponses"/>
+                </View>
+
+                <TextInput placeholder="Question 8" value={question} style={styles.input} onChangeText= {(value)=>setQuestion(value)}/>
+                <View style={styles.button}>
+                    <Button color='cadetblue' onPress={pressHandlerCreateQuestion} title="Ajouter des réponses"/>
+                </View>
                 
-
+                <TextInput placeholder="Question 9" value={question} style={styles.input} onChangeText= {(value)=>setQuestion(value)}/>
+                <View style={styles.button}>
+                    <Button color='cadetblue' onPress={pressHandlerCreateQuestion} title="Ajouter des réponses"/>
+                </View>
+                
+                <TextInput placeholder="Question 10" value={question} style={styles.input} onChangeText= {(value)=>setQuestion(value)}/>
+                <View style={styles.button}>
+                    <Button color='cadetblue' onPress={pressHandlerCreateQuestion} title="Ajouter des réponses"/>
+                </View>
+                
                 </View>
               :
               null
